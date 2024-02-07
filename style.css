@@ -140,3 +140,10 @@ body {
   width: 60%;
   margin-bottom: 20px;
 }
+
+footer p {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+}
