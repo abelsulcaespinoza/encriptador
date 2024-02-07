@@ -141,6 +141,11 @@ body {
   margin-bottom: 20px;
 }
 
+footer {
+  width: 100%;
+  margin: 5px 0;
+}
+
 footer p {
   font-family: "Inter", sans-serif;
   text-align: center;
