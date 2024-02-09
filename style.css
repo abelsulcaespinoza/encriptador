@@ -93,7 +93,7 @@ footer p {
   height: 67px;
   border-radius: 24px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   border: 1px solid #20497d;
   cursor: pointer;
 }
@@ -152,4 +152,179 @@ footer p {
   margin-top: 20px;
   font-size: 18px;
   color: #464b51;
+}
+
+/* Para Dispositivos Móviles: */
+/* Teléfonos pequeños:*/
+@media only screen and (max-width: 480px) {
+  body {
+    width: 480px;
+    background-color: #f3f5fc;
+    font-family: "Inter", sans-serif;
+  }
+
+  main,
+  footer {
+    width: 480px;
+  }
+
+  main {
+    display: inline-block;
+  }
+
+  footer {
+    height: 10%;
+  }
+  footer p {
+    text-align: center;
+    font-size: 13px;
+    color: #595f65;
+    user-select: none;
+  }
+
+  .logo,
+  .principal,
+  .resultado {
+    border: 1px solid blue;
+  }
+
+  .logo {
+    width: 90%;
+  }
+  /* Parte superior de Principal */
+  .principal {
+    width: 90%;
+    height: 600px;
+  }
+
+  .input-principal {
+    height: 70%;
+  }
+
+  .caja-de-texto {
+    width: 350px;
+    height: 40px;
+    font-size: 32px;
+    background-color: #f3f5fc;
+    color: #20497d;
+    resize: vertical;
+  }
+
+  .caja-de-texto::placeholder {
+    color: #20497d;
+  }
+
+  /* Parte inferior de Principal */
+
+  .aviso-botones-principal {
+    height: 30%;
+  }
+  .aviso {
+    align-items: center;
+  }
+
+  .aviso p {
+    font-size: 13px;
+    color: #595f65;
+    user-select: none;
+  }
+
+  .encriptar,
+  .desencriptar,
+  .copiar {
+    width: 90%;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 20px;
+    border: 1px solid #20497d;
+  }
+
+  .encriptar {
+    background-color: #20497d;
+    color: white;
+  }
+
+  .desencriptar {
+    background-color: #d9e0e8;
+    color: #20497d;
+    margin-top: 10px;
+  }
+
+  .copiar {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Resultado */
+  .resultado {
+    width: 90%;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 32px;
+    display: flex;
+    box-shadow: 0px 0px 20px 2px #dbdbdb;
+  }
+
+  .tarjeta {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .muñeco {
+    width: 90%;
+  }
+  .portapapeles {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .mensaje-resultado {
+    width: 90%;
+    margin: 15px auto;
+    text-align: center;
+  }
+
+  .mensaje-titulo {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #464b51;
+  }
+
+  .mensaje-encriptado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #464b51;
+  }
+}
+/* Teléfonos estándar:  */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+}
+/* Teléfonos grandes y phablets:  */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Para Tablets:*/
+/* Tablets pequeñas:  */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+/* Tablets estándar:  */
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+}
+/* Tablets grandes:  */
+@media only screen and (min-width: 1367px) {
+}
+
+/* Para Laptops y Computadoras de Escritorio: */
+/* Pantallas pequeñas:  */
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+}
+/* Pantallas medianas:  */
+@media only screen and (min-width: 1367px) and (max-width: 1680px) {
+}
+/* Pantallas grandes:  */
+@media only screen and (min-width: 1681px) and (max-width: 1920px) {
+}
+/* Pantallas extra grandes:  */
+@media only screen and (min-width: 1921px) {
 }
