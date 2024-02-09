@@ -86,7 +86,7 @@ let textoEncriptado = "";
 function botonEncriptarMensaje() {
   try {
     // Expresión regular para permitir solo letras minúsculas y sin acentos
-    var regex = /^[a-z\s]+$/;
+    var regex = /^[a-z\s.,;:¿?!¡]+$/;
 
     // Verificar si el valor cumple con la expresión regular
     if (!regex.test(extraerTexto())) {
@@ -117,7 +117,7 @@ function botonEncriptarMensaje() {
 function botonDesencriptarMensaje() {
   try {
     // Expresión regular para permitir solo letras minúsculas y sin acentos
-    var regex = /^[a-z\s]+$/;
+    var regex = /^[a-z\s.,;:¿?!¡]+$/;
 
     // Verificar si el valor cumple con la expresión regular
     if (!regex.test(extraerTexto())) {
