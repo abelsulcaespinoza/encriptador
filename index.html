@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=+, initial-scale=1.0" />
     <!-- Estilos -->
+    <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="style.css" />
+
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,21 +17,28 @@
     <title>Encriptador</title>
   </head>
   <body>
-    <header>
-      <img class="logo" src="img/Logo.png" alt="Logo Alura" />
-    </header>
     <main class="contenedor">
-      <div class="principal">
+      <!-- Logo -->
+      <section class="logo">
+        <img src="img/Logo.png" alt="Logo Alura" />
+      </section>
+
+      <!-- Input y botones -->
+      <form class="principal">
         <!-- Input caja de texto -->
-        <div class="input">
+        <div class="input-principal">
           <input
-            id="cajaDeTexto"
-            class="cajaDeTexto"
+            id="caja-de-texto"
+            class="caja-de-texto"
             type="text"
+            pattern="[a-z]+"
             placeholder="Ingrese el texto aquí"
+            required
           />
         </div>
-        <div class="aviso-botones">
+
+        <!-- Aviso y botones -->
+        <div class="aviso-botones-principal">
           <!-- Aviso -->
           <div class="aviso">
             <img src="img/Group.png" alt="Alerta" />
@@ -40,44 +49,45 @@
           <div class="botones">
             <input
               id="encriptar"
-              onclick="botonEncriptarMensaje();"
               class="encriptar"
+              onclick="botonEncriptarMensaje();"
               type="button"
               value="Encriptar"
             />
             <input
               id="desencriptar"
-              onclick="botonDesencriptarMensaje();"
               class="desencriptar"
+              onclick="botonDesencriptarMensaje();"
               type="button"
               value="Desencriptar"
             />
           </div>
         </div>
-      </div>
+      </form>
 
       <!-- Resultado -->
       <div class="resultado">
         <div id="tarjerta" class="tarjeta">
-          <img id="muñeco-1" src="img/Muñeco.png" alt="Muñeco" />
+          <img id="muñeco" class="muñeco" src="img/Muñeco.png" alt="Muñeco" />
           <img
             id="portapapeles"
+            class="portapapeles"
             src="img/portapapeles.png"
             alt="Portapapeles"
           />
-          <div class="mensajeTexto">
-            <p id="mensaje1" class="mensaje1">Ningún mensaje fue encontrado</p>
-            <p id="mensaje2" class="mensaje2">
+          <div class="mensaje-resultado">
+            <p id="mensaje-titulo" class="mensaje-titulo">
+              Ningún mensaje fue encontrado
+            </p>
+            <p id="mensaje-encriptado" class="mensaje-encriptado">
               Ingresa el texto que desees encriptar o desencriptar.
             </p>
-
-            <p id="mensajeEncriptado" class="mensajeEncriptado"></p>
           </div>
           <!-- Boton Copiar Oculto -->
           <input
+            id="copiar"
+            class="copiar"
             onclick="botonCopiarMensaje();"
-            id="botonCopiar"
-            class="botonCopiar"
             type="button"
             value="Copiar"
           />

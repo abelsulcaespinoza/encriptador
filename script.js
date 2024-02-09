@@ -1,5 +1,8 @@
 // Autor: Abel Sula Espínoza
 
+//Variable Global
+var regex = /^[a-z]+$/;
+
 // Función para ocultar un elemento
 function ocultarElemento(elemento) {
   return (document.getElementById(elemento).style.display = "none");
@@ -19,24 +22,23 @@ function modificarTextoElemento(elemento, texto) {
 
 // Funcion para limpiar la caja de texto
 function limpiarCaja() {
-  document.getElementById("cajaDeTexto").value = "";
-  document.getElementById("cajaDeTexto").focus();
+  document.getElementById("caja-de-texto").value = "";
+  document.getElementById("caja-de-texto").focus();
   return;
 }
 
 //Ocultando boton Copiar e img portapapeles
-ocultarElemento("botonCopiar");
+ocultarElemento("copiar");
 ocultarElemento("portapapeles");
 
 function ocultarElementosIniciales(elemento) {
-  ocultarElemento("muñeco-1");
-  ocultarElemento("mensaje2");
+  ocultarElemento("muñeco");
   ocultarElemento("portapapeles");
 }
 
 //Funcion para extraer el texto de la caja de texto
 function extraerTexto() {
-  return document.getElementById("cajaDeTexto").value;
+  return document.getElementById("caja-de-texto").value;
 }
 
 //Funcion para encritar el mensaje
@@ -79,27 +81,27 @@ function botonEncriptarMensaje() {
   //Ocultar elementos
   ocultarElementosIniciales();
   //Modificar elementos
-  modificarTextoElemento("mensaje1", "Mensaje Encriptado: ");
-  modificarTextoElemento("mensajeEncriptado", imprimirMensajeEncriptado());
+  modificarTextoElemento("mensaje-titulo", "Mensaje Encriptado: ");
+  modificarTextoElemento("mensaje-encriptado", imprimirMensajeEncriptado());
   limpiarCaja();
-  mostrarElemento("botonCopiar");
+  mostrarElemento("copiar");
 }
 
 function botonDesencriptarMensaje() {
   //Ocultar elementos
   ocultarElementosIniciales();
   //Modificar elementos
-  modificarTextoElemento("mensaje1", "Mensaje Desencriptado: ");
-  modificarTextoElemento("mensajeEncriptado", imprimirMensajeDesencriptado());
+  modificarTextoElemento("mensaje-titulo", "Mensaje Desencriptado: ");
+  modificarTextoElemento("mensaje-encriptado", imprimirMensajeDesencriptado());
   limpiarCaja();
-  mostrarElemento("botonCopiar");
+  mostrarElemento("copiar");
 }
 
 function botonCopiarMensaje() {
   //muestra imagen portapapeles
   mostrarElemento("portapapeles");
-  modificarTextoElemento("mensaje1", "Mensaje copiado al portapapeles");
+  modificarTextoElemento("mensaje-titulo", "Mensaje copiado al portapapeles");
   //oculta el boton copiar
-  ocultarElemento("botonCopiar");
+  ocultarElemento("copiar");
   limpiarCaja();
 }
