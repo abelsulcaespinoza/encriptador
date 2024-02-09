@@ -29,10 +29,14 @@ function limpiarCaja() {
 
 //Ocultando boton Copiar e img portapapeles
 ocultarElemento("copiar");
+ocultarElemento("lupa");
+ocultarElemento("lupa-2");
 ocultarElemento("portapapeles");
 
 function ocultarElementosIniciales(elemento) {
   ocultarElemento("muñeco");
+  ocultarElemento("lupa");
+  ocultarElemento("lupa-2");
   ocultarElemento("portapapeles");
 }
 
@@ -77,31 +81,83 @@ function imprimirMensajeDesencriptado() {
   return desencriptarVocales(extraerTexto());
 }
 
+let textoEncriptado = "";
+
 function botonEncriptarMensaje() {
-  //Ocultar elementos
-  ocultarElementosIniciales();
-  //Modificar elementos
-  modificarTextoElemento("mensaje-titulo", "Mensaje Encriptado: ");
-  modificarTextoElemento("mensaje-encriptado", imprimirMensajeEncriptado());
-  limpiarCaja();
-  mostrarElemento("copiar");
+  try {
+    // Expresión regular para permitir solo letras minúsculas y sin acentos
+    var regex = /^[a-z\s]+$/;
+
+    // Verificar si el valor cumple con la expresión regular
+    if (!regex.test(extraerTexto())) {
+      // Lanzar una excepción si no cumple con las restricciones
+      throw new Error(
+        "Por favor, ingrese solo letras minúsculas y sin acentos."
+      );
+    } else {
+      //Ocultar elementos
+      ocultarElementosIniciales();
+      //Mostrar elementos
+      mostrarElemento("lupa");
+      //Modificar elementos
+      modificarTextoElemento("mensaje-titulo", "Mensaje Encriptado: ");
+      modificarTextoElemento("mensaje-encriptado", imprimirMensajeEncriptado());
+      limpiarCaja();
+      mostrarElemento("mensaje-encriptado");
+      mostrarElemento("copiar");
+    }
+  } catch (error) {
+    // Manejar la excepción y mostrar el mensaje de error
+    alert(error.message);
+
+    document.getElementById("caja-de-texto").focus();
+  }
 }
 
 function botonDesencriptarMensaje() {
-  //Ocultar elementos
-  ocultarElementosIniciales();
-  //Modificar elementos
-  modificarTextoElemento("mensaje-titulo", "Mensaje Desencriptado: ");
-  modificarTextoElemento("mensaje-encriptado", imprimirMensajeDesencriptado());
-  limpiarCaja();
-  mostrarElemento("copiar");
+  try {
+    // Expresión regular para permitir solo letras minúsculas y sin acentos
+    var regex = /^[a-z\s]+$/;
+
+    // Verificar si el valor cumple con la expresión regular
+    if (!regex.test(extraerTexto())) {
+      // Lanzar una excepción si no cumple con las restricciones
+      throw new Error(
+        "Por favor, ingrese solo letras minúsculas y sin acentos."
+      );
+    } else {
+      //Ocultar elementos
+      ocultarElementosIniciales();
+      //Mostrar elementos
+      mostrarElemento("lupa-2");
+      //Modificar elementos
+      modificarTextoElemento("mensaje-titulo", "Mensaje Desencriptado: ");
+      modificarTextoElemento(
+        "mensaje-encriptado",
+        imprimirMensajeDesencriptado()
+      );
+      limpiarCaja();
+      mostrarElemento("mensaje-encriptado");
+      mostrarElemento("copiar");
+    }
+  } catch (error) {
+    // Manejar la excepción y mostrar el mensaje de error
+    alert(error.message);
+    document.getElementById("caja-de-texto").focus();
+  }
 }
 
 function botonCopiarMensaje() {
   //muestra imagen portapapeles
   mostrarElemento("portapapeles");
   modificarTextoElemento("mensaje-titulo", "Mensaje copiado al portapapeles");
+  navigator.clipboard.writeText(
+    document.getElementById("mensaje-encriptado").innerHTML
+  );
   //oculta el boton copiar
   ocultarElemento("copiar");
+  ocultarElemento("lupa");
+  ocultarElemento("lupa-2");
   limpiarCaja();
+  ocultarElemento("mensaje-encriptado");
 }
