@@ -20,7 +20,6 @@ function modificarTextoElemento(elemento, texto) {
 // Funcion para limpiar la caja de texto
 function limpiarCaja() {
   document.getElementById("caja-de-texto").value = "";
-  document.getElementById("caja-de-texto").focus();
   return;
 }
 
