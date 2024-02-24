@@ -1,8 +1,5 @@
 // Autor: Abel Sula Espínoza
 
-//Variable Global
-var regex = /^[a-z]+$/;
-
 // Función para ocultar un elemento
 function ocultarElemento(elemento) {
   return (document.getElementById(elemento).style.display = "none");
