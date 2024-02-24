@@ -53,6 +53,7 @@
   }
 
   .logo img {
+    width: auto;
     display: grid;
     place-items: center;
     margin: 0 auto;
@@ -204,8 +205,7 @@
     border-radius: 24px;
     font-weight: 500;
     font-size: 20px;
-    border: 1px solid #20497d;
-    background-color: #d9e0e8;
+    background-color: #ffffff;
     color: #20497d;
     cursor: pointer;
   }
